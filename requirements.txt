@@ -1,0 +1,64 @@
+# ===========================
+# Sinatra Microservice Requirements
+# ===========================
+
+# ---------------------------
+# 💎 Ruby Environment
+# ---------------------------
+Ruby >= 3.1
+Bundler >= 2.3
+
+# ---------------------------
+# 📦 Ruby Gems (Declared in Gemfile)
+# ---------------------------
+sinatra
+json
+
+# ---------------------------
+# 🐳 Docker Setup
+# ---------------------------
+# To build and run the Sinatra app in Docker:
+
+# 1️⃣ Build Docker image
+#    docker build -t sinatra-microservice .
+
+# 2️⃣ Run container
+#    docker run -p 5050:5050 sinatra-microservice
+
+# OR using docker-compose:
+#    docker-compose up --build
+
+# Default container port (internal): 5050
+# Mapped host port (external): 5050
+
+# ---------------------------
+# 🧰 Local Setup (VS Code)
+# ---------------------------
+# To run locally without Docker:
+
+# 1️⃣ Install dependencies
+#    gem install bundler
+#    bundle install
+
+# 2️⃣ Run app
+#    ruby app.rb
+
+# App runs by default on:
+#    http://localhost:5050
+
+# ---------------------------
+# ⚙️ Recommended Tools
+# ---------------------------
+# - Visual Studio Code
+# - VS Code Ruby Extension (rebornix.Ruby)
+# - Docker Desktop
+# - curl or Postman for API testing
+
+# ---------------------------
+# 🧪 API Endpoints
+# ---------------------------
+# GET /
+#   -> Returns: {"message": "Welcome to Sinatra Microservice running on port 5050!"}
+
+# GET /hello
+#   -> Returns: {"greeting": "Hello from Sinatra on port 5050!"}

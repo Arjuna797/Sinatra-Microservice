@@ -24,6 +24,66 @@ docker-compose up -d
 # On Windows
 docker compose up -d
 
+# Sinatra Microservice 🚀
+
+
+## 📋 Project Migration Guide: Windows to Ubuntu VM
+
+This guide provides step-by-step instructions for migrating the Sinatra microservice project from a Windows environment to an Ubuntu virtual machine hosted on VirtualBox. The migration focuses on local execution without Docker.
+
+### Prerequisites
+- VirtualBox installed on Windows
+- Ubuntu VM set up in VirtualBox (e.g., Ubuntu 22.04 LTS)
+- Project files transferred from Windows to Ubuntu VM (use shared folders, USB drive, or network transfer)
+
+### 1. Transfer Project Files
+- Copy the entire project directory from Windows to the Ubuntu VM.
+- Place it in a suitable location, e.g., `/home/ubuntu/sinatra-microservice`.
+
+### 2. Install System Dependencies on Ubuntu
+Update the package list and install required system packages:
+```bash
+sudo apt update
+sudo apt install -y ruby-full build-essential ruby-dev
+```
+
+### 3. Set Up Ruby Environment
+Install Bundler for managing Ruby gems:
+```bash
+gem install bundler
+```
+
+### 4. Install Project Dependencies
+Navigate to the project directory and install the required gems:
+```bash
+cd /path/to/sinatra-microservice
+bundle install
+```
+
+### 5. Run the Application
+Start the Sinatra microservice:
+```bash
+ruby app.rb
+```
+
+The application will run on `http://localhost:5050`.
+
+### Running on Windows (Original Environment)
+For reference, to run locally on Windows without Docker:
+1. Ensure Ruby 3.1+ is installed.
+2. Install Bundler: `gem install bundler`
+3. Install dependencies: `bundle install`
+4. Run the app: `ruby app.rb`
+
+### API Endpoints
+- GET `/` - Returns a welcome message
+- GET `/hello` - Returns a greeting message
+
+### Troubleshooting
+- If you encounter permission issues, use `sudo` for system installations.
+- Ensure the VM has internet access for downloading dependencies.
+- Verify Ruby version with `ruby -v` (should be 3.1 or higher).
+
 ---
 
 ## ⚙️ Setup Instructions
@@ -32,6 +92,7 @@ docker compose up -d
 ```bash
 git clone https://github.com/<your-username>/sinatra-microservice.git
 cd sinatra-microservice
+
 
 ### 🐧 2. Migration from Windows to Ubuntu VM
 
@@ -90,22 +151,4 @@ cd sinatra-microservice
 
 5. **Access the Application**:
    - Open a web browser and navigate to `http://localhost:5050`.
-
-
-```bash
-# On Ubuntu / Linux
-docker-compose up -d
-
-# On Windows
-docker compose up -d
-
----
-
-## ⚙️ Setup Instructions
-
-### 🧩 1. Clone the Repository
-```bash
-git clone https://github.com/<your-username>/sinatra-microservice.git
-cd sinatra-microservice
-
 

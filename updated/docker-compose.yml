@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  sinatra-service:
+    build: .
+    container_name: sinatra_service
+    ports:
+      - "5050:5050"
+    restart: always
